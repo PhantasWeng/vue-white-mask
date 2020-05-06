@@ -3,7 +3,23 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
+// import Antd from 'ant-design-vue'
+// import { Base, Layout, Button, Menu, Icon } from 'ant-design-vue'
+import Antd from './antComponents'
+
+// import 'ant-design-vue/dist/antd.css'
+// import 'ant-design-vue/dist/antd.less'
+
 Vue.config.productionTip = false
+Object.keys(Antd).forEach(key => {
+  Vue.use(Antd[key])
+})
+// Vue.use(Antd)
+// Vue.use(Base)
+// Vue.use(Layout)
+// Vue.use(Menu)
+// Vue.use(Icon)
+// Vue.use(Button)
 
 new Vue({
   router,

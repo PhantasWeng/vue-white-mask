@@ -31,8 +31,28 @@ module.exports = {
     //   .set('sub', resolve('sub'))
   },
   css: {
-    sourceMap: isDev,
+    // sourceMap: isDev,
     loaderOptions: {
+      less: {
+        lessOptions: {
+          modifyVars: {
+            'primary-color': '#078ABC',
+            'link-color': '#078ABC',
+            'success-color': '#A9D341',
+            'warning-color': '#F7AC15',
+            'error-color': '#EA5E2E',
+            'font-size-base': '14',
+            'heading-color': '#fff',
+            'text-color': '#5C656B',
+            'text-color-secondary': '#889096',
+            'disabled-color': '#D1D7DD',
+            'border-radius-base': '2px',
+            'border-color-base': '#E6EAED',
+            'box-shadow-base': '#E6EAED',
+          },
+          javascriptEnabled: true,
+        }
+      },
       // sass: {
       //   data: `@import "@/stylesheets/_function.sass"`
       // },
@@ -41,7 +61,7 @@ module.exports = {
           // require('tailwindcss')(owlsight),
           require('autoprefixer')
         ]
-      }
+      },
     }
   },
   devServer: {
