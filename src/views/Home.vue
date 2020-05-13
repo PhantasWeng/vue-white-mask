@@ -7,7 +7,8 @@
 
 <script>
 // @ is an alias to /src
-
+var owlsight = require('owlsight')
+console.log('owlsight', owlsight)
 export default {
   name: 'Home',
   components: {

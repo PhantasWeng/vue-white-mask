@@ -10,6 +10,10 @@ import Antd from './antComponents'
 // import 'ant-design-vue/dist/antd.css'
 // import 'ant-design-vue/dist/antd.less'
 
+import 'owlsight/dist/main.css'
+import 'owlsight/icons/css/owl.css'
+import 'owlsight/icons/css/animation.css'
+
 Vue.config.productionTip = false
 Object.keys(Antd).forEach(key => {
   Vue.use(Antd[key])

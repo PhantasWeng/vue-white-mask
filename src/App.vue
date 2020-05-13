@@ -1,95 +1,35 @@
 <template>
-  <div id="app">
-    <a-layout id="components-layout-demo-top-side-2">
-      <a-layout-header class="header">
-        <div class="logo" />
-        <a-menu
-          theme="dark"
-          mode="horizontal"
-          :default-selected-keys="['2']"
-          :style="{ lineHeight: '64px' }"
-        >
-          <a-menu-item key="1">
-            nav 1
-          </a-menu-item>
-          <a-menu-item key="2">
-            nav 2
-          </a-menu-item>
-          <a-menu-item key="3">
-            nav 3
-          </a-menu-item>
-        </a-menu>
-      </a-layout-header>
-      <a-layout>
-        <a-layout-sider width="200" style="background: #fff">
-          <a-menu
-            mode="inline"
-            :default-selected-keys="['1']"
-            :default-open-keys="['sub1']"
-            :style="{ height: '100%', borderRight: 0 }"
-          >
-            <a-sub-menu key="sub1">
-              <span slot="title"><a-icon type="user" />subnav 1</span>
-              <a-menu-item key="1">
-                option1
-              </a-menu-item>
-              <a-menu-item key="2">
-                option2
-              </a-menu-item>
-              <a-menu-item key="3">
-                option3
-              </a-menu-item>
-              <a-menu-item key="4">
-                option4
-              </a-menu-item>
-            </a-sub-menu>
-            <a-sub-menu key="sub2">
-              <span slot="title"><a-icon type="laptop" />subnav 2</span>
-              <a-menu-item key="5">
-                option5
-              </a-menu-item>
-              <a-menu-item key="6">
-                option6
-              </a-menu-item>
-              <a-menu-item key="7">
-                option7
-              </a-menu-item>
-              <a-menu-item key="8">
-                option8
-              </a-menu-item>
-            </a-sub-menu>
-            <a-sub-menu key="sub3">
-              <span slot="title"><a-icon type="notification" />subnav 3</span>
-              <a-menu-item key="9">
-                option9
-              </a-menu-item>
-              <a-menu-item key="10">
-                option10
-              </a-menu-item>
-              <a-menu-item key="11">
-                option11
-              </a-menu-item>
-              <a-menu-item key="12">
-                option12
-              </a-menu-item>
-            </a-sub-menu>
-          </a-menu>
-        </a-layout-sider>
-        <a-layout style="padding: 0 24px 24px">
-          <a-breadcrumb style="margin: 16px 0">
-            <a-breadcrumb-item>Home</a-breadcrumb-item>
-            <a-breadcrumb-item>List</a-breadcrumb-item>
-            <a-breadcrumb-item>App</a-breadcrumb-item>
-          </a-breadcrumb>
-          <a-layout-content
-            :style="{ background: '#fff', padding: '24px', margin: 0, minHeight: '280px' }"
-          >
-            Content
-          </a-layout-content>
-        </a-layout>
-      </a-layout>
-    </a-layout>
+<div class="layoutDefault">
+  <div class="sticky-body">
+    <div class="layout">
+      <div class="layout__sidebar">
+        <div class="layout__sidebar__logo">
+          <img src="~@/assets/logo.png" alt="OwlNews Logo" class="layout__sidebar__logo__image">
+          <div class="layout__sidebar__logo__name">OwlNews</div>
+        </div>
+        <nav class="layout__sidebar__navigation">
+          <ul>
+            <div class="layout__sidebar__navigation__group">
+              <li>全覽</li>
+            </div>
+            <div class="layout__sidebar__navigation__group">
+              <li>前台</li>
+              <li>首頁編輯</li>
+              <li>政策/條款</li>
+            </div>
+            <div class="layout__sidebar__navigation__group">
+              <li>旅宿列表</li>
+              <li>申請列表</li>
+              <li>外部房源</li>
+            </div>
+          </ul>
+        </nav>
+      </div>
+      <div class="layout__main">
+      </div>
+    </div>
   </div>
+</div>
 </template>
 
 <script>
@@ -102,10 +42,44 @@ export default {
 }
 </script>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+<style lang="sass">
+#app
+  font-family: Avenir, Helvetica, Arial, sans-serif
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+.layoutDefault
+  @apply flex flex-col
+  min-height: 100vh
+  .sticky-body
+    @apply flex-auto
+
+.layout
+  &__sidebar
+    @apply float-left
+    @apply border-r border-grey-lightest
+    min-height: 100vh
+
+    &__logo
+      @apply flex items-center justify-center
+      @apply border-b border-grey-lightest
+      @apply p-16
+      &__image
+        width: 36px
+        @apply mr-8
+      &__name
+        @apply text-xl font-bold mr-8
+
+    &__navigation
+      @apply list-none
+      &__group
+        li:first-child
+          @apply font-bold
+        li:not(:first-child)
+          @apply ml-16
+
+  &__mainContent
+
+.serviceName
+  @apply text-grey-darker font-bold text-xl
 </style>

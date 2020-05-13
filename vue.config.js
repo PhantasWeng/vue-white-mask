@@ -1,4 +1,4 @@
-// var owlsight = require('owlsight')
+var owlsight = require('owlsight')
 const path = require('path')
 function resolve (dir) {
   console.log('dir', dir)
@@ -58,7 +58,7 @@ module.exports = {
       // },
       postcss: {
         plugins: [
-          // require('tailwindcss')(owlsight),
+          require('tailwindcss')(owlsight),
           require('autoprefixer')
         ]
       },
