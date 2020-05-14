@@ -42,7 +42,7 @@ module.exports = {
             'warning-color': '#F7AC15',
             'error-color': '#EA5E2E',
             'font-size-base': '14',
-            'heading-color': '#fff',
+            'heading-color': '#5C656B',
             'text-color': '#5C656B',
             'text-color-secondary': '#889096',
             'disabled-color': '#D1D7DD',
