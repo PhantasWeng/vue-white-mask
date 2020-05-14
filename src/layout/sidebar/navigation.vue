@@ -4,9 +4,9 @@
     <div :key="group.name">
       <template v-for="block in group.children">
         <div class="mask__navigation__block" :key="`${group.name}-${block.name}`">
-          <li class="mask__navigation__block--title">{{ block.name }}</li>
+          <li class="mask__navigation__block--title" :class="{'activated': block.key === $route.name}" >{{ block.name }}</li>
           <template v-for="children in block.children">
-            <li :key="`${group.name}-${block.name}-${children.key}`">
+            <li :class="{'activated': children.key === $route.name}" :key="`${group.name}-${block.name}-${children.key}`">
               <span>{{ children.name }}</span>
             </li>
           </template>
@@ -29,8 +29,8 @@ export default {
           children: [
             {
               name: '儀表版',
-              type: 'block',
-              children: []
+              key: 'dashboard',
+              type: 'page'
             },
             {
               name: '前台',
@@ -206,6 +206,6 @@ export default {
       &:not(.mask__navigation__block--title)
         @apply font-light
         @apply ml-16
-    .activated
-      @apply text-blue
+  .activated
+    @apply text-blue #{!important}
 </style>
