@@ -1,54 +1,20 @@
 <template>
   <nav class="mask__navigation">
-    <template v-for="group in data">
+    <template v-for="(group, index) in data">
       <div :key="group.name">
         <template v-for="(block, index) in group.children">
           <div class="mask__navigation__block" :key="`block-${index}`">
             <li class="mask__navigation__block--title">{{ block.name }}</li>
             <template v-for="children in block.children">
-              <li :key="children.key">{{ children.type }}{{ children.name }}</li>
+              <li :key="children.key">
+                <span>{{ children.name }}</span>
+              </li>
             </template>
           </div>
         </template>
-        <hr class="mask__navigation__hr">
+        <hr v-if="index + 1 < data.length" class="mask__navigation__hr">
       </div>
     </template>
-    <!-- <div class="layout__sidebar__navigation__block">
-      <li class="layout__sidebar__navigation__block--title">旅宿</li>
-      <li class="activated">旅宿列表</li>
-      <li>申請列表</li>
-      <li>外部房源</li>
-    </div>
-    <div class="layout__sidebar__navigation__block">
-      <li class="layout__sidebar__navigation__block--title">標籤</li>
-    </div>
-    <div class="layout__sidebar__navigation__block">
-      <li class="layout__sidebar__navigation__block--title">行銷活動</li>
-      <li>邀請回饋</li>
-      <li>優惠券</li>
-      <li>活動列表</li>
-    </div>
-    <div class="layout__sidebar__navigation__block">
-      <li class="layout__sidebar__navigation__block--title">財務</li>
-      <li>銷退</li>
-      <li>帳務</li>
-      <li>飯店帳務</li>
-    </div>
-    <hr class="layout__sidebar__navigation__hr">
-    <div class="layout__sidebar__navigation__block">
-      <li class="layout__sidebar__navigation__block--title">會員</li>
-      <li>會員列表</li>
-      <li>訂閱</li>
-    </div>
-    <div class="layout__sidebar__navigation__block">
-      <li class="layout__sidebar__navigation__block--title">評論</li>
-      <li>評論列表</li>
-      <li>入住夜間</li>
-    </div>
-    <hr class="layout__sidebar__navigation__hr">
-    <div class="layout__sidebar__navigation__block">
-      <li class="layout__sidebar__navigation__block--title">權限</li>
-    </div> -->
   </nav>
 </template>
 
@@ -95,17 +61,125 @@ export default {
           type: 'group',
           children: [
             {
-              name: '儀表版',
-              children: []
-            },
-            {
-              name: '前台',
+              name: '旅宿',
+              type: 'block',
               children: [
                 {
-                  name: '首頁編輯'
+                  key: 'homepage-edit',
+                  name: '旅宿列表',
+                  type: 'page'
                 },
                 {
-                  name: '政策/條款'
+                  key: 'policy-edit',
+                  name: '申請列表',
+                  type: 'page'
+                },
+                {
+                  key: 'phantas',
+                  name: '外部房源',
+                  type: 'link'
+                }
+              ]
+            },
+            {
+              name: '標籤',
+              type: 'block',
+              children: [
+                {
+                  key: 'homepage-edit',
+                  name: '行銷活動',
+                  type: 'page'
+                },
+                {
+                  key: 'policy-edit',
+                  name: '邀請回饋',
+                  type: 'page'
+                },
+                {
+                  key: 'phantas',
+                  name: '優惠券',
+                  type: 'link'
+                },
+                {
+                  key: 'phantas',
+                  name: '活動列表',
+                  type: 'link'
+                }
+              ]
+            },
+            {
+              name: '財務',
+              type: 'block',
+              children: [
+                {
+                  key: 'homepage-edit',
+                  name: '銷退',
+                  type: 'page'
+                },
+                {
+                  key: 'policy-edit',
+                  name: '帳務',
+                  type: 'page'
+                },
+                {
+                  key: 'phantas',
+                  name: '飯店帳務',
+                  type: 'link'
+                }
+              ]
+            }
+          ]
+        },
+        {
+          name: '會員',
+          type: 'group',
+          children: [
+            {
+              name: '會員',
+              type: 'block',
+              children: [
+                {
+                  key: 'homepage-edit',
+                  name: '會員列表',
+                  type: 'page'
+                },
+                {
+                  key: 'policy-edit',
+                  name: '訂閱',
+                  type: 'page'
+                }
+              ]
+            },
+            {
+              name: '評論',
+              type: 'block',
+              children: [
+                {
+                  key: 'homepage-edit',
+                  name: '評論列表',
+                  type: 'page'
+                },
+                {
+                  key: 'policy-edit',
+                  name: '入住夜間',
+                  type: 'page'
+                }
+              ]
+            }
+          ]
+        },
+        {
+          name: '系統',
+          type: 'group',
+          children: [
+            {
+              name: '系統',
+              type: 'block',
+              children: [
+                {
+                  key: 'homepage-edit',
+                  name: '權限',
+                  type: 'page'
                 }
               ]
             }
