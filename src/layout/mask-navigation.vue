@@ -2,11 +2,11 @@
   <nav class="mask__navigation">
     <template v-for="(group, index) in data">
       <div :key="group.name">
-        <template v-for="(block, index) in group.children">
-          <div class="mask__navigation__block" :key="`block-${index}`">
+        <template v-for="block in group.children">
+          <div class="mask__navigation__block" :key="`${group.name}-${block.name}`">
             <li class="mask__navigation__block--title">{{ block.name }}</li>
             <template v-for="children in block.children">
-              <li :key="children.key">
+              <li :key="`${group.name}-${block.name}-${children.key}`">
                 <span>{{ children.name }}</span>
               </li>
             </template>
@@ -25,7 +25,7 @@ export default {
     return {
       data: [
         {
-          name: 'group01',
+          name: 'website',
           type: 'group',
           children: [
             {
@@ -57,7 +57,7 @@ export default {
           ]
         },
         {
-          name: 'group02',
+          name: 'hotels',
           type: 'group',
           children: [
             {
@@ -131,7 +131,7 @@ export default {
           ]
         },
         {
-          name: '會員',
+          name: 'user',
           type: 'group',
           children: [
             {
@@ -169,7 +169,7 @@ export default {
           ]
         },
         {
-          name: '系統',
+          name: 'system',
           type: 'group',
           children: [
             {
