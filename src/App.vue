@@ -1,6 +1,6 @@
 <template>
-<div class="layoutDefault">
-  <div class="sticky-body">
+<div class="sticky--layout">
+  <div class="sticky--body">
     <div class="mask">
       <div class="mask__sidebar">
         <div class="mask__sidebar__logo">
@@ -50,11 +50,11 @@ export default {
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
 
-.layoutDefault
+.sticky--layout
   @apply flex flex-col
   min-height: 100vh
-  .sticky-body
-    @apply flex-auto
+.sticky--body
+  @apply flex-auto
 
 .mask
   @apply flex
