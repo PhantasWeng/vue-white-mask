@@ -1,18 +1,23 @@
 <template>
 <div class="mask__sidebar__logo">
-  <img src="~@/assets/logo.png" alt="OwlNews Logo" class="mask__sidebar__logo__image">
+  <img :src="logo" alt="OwlNews Logo" class="mask__sidebar__logo__image">
   <div class="mask__sidebar__logo__name">WhiteMask</div>
 </div>
 </template>
 
 <script>
+import logo from '@/assets/logo.png'
 export default {
-
+  data () {
+    return {
+      logo: logo
+    }
+  }
 }
 </script>
 
-<style lang="sass">
-.mask__logo
+<style lang="sass" scoped>
+.mask__sidebar__logo
   @apply flex items-center justify-center
   @apply border-b border-grey-lightest
   @apply p-16

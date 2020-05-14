@@ -64,17 +64,17 @@ export default {
               type: 'block',
               children: [
                 {
-                  key: 'homepage-edit',
+                  key: 'hotel-list',
                   name: '旅宿列表',
                   type: 'page'
                 },
                 {
-                  key: 'policy-edit',
+                  key: 'hotel-apply',
                   name: '申請列表',
                   type: 'page'
                 },
                 {
-                  key: 'phantas',
+                  key: 'hotel-outer',
                   name: '外部房源',
                   type: 'link'
                 }
@@ -85,22 +85,22 @@ export default {
               type: 'block',
               children: [
                 {
-                  key: 'homepage-edit',
+                  key: 'projects-list',
                   name: '行銷活動',
                   type: 'page'
                 },
                 {
-                  key: 'policy-edit',
+                  key: 'invitations-list',
                   name: '邀請回饋',
                   type: 'page'
                 },
                 {
-                  key: 'phantas',
+                  key: 'coupons',
                   name: '優惠券',
                   type: 'link'
                 },
                 {
-                  key: 'phantas',
+                  key: 'events-list',
                   name: '活動列表',
                   type: 'link'
                 }
@@ -111,17 +111,17 @@ export default {
               type: 'block',
               children: [
                 {
-                  key: 'homepage-edit',
+                  key: 'finance-refund',
                   name: '銷退',
                   type: 'page'
                 },
                 {
-                  key: 'policy-edit',
+                  key: 'finance-accounts',
                   name: '帳務',
                   type: 'page'
                 },
                 {
-                  key: 'phantas',
+                  key: 'finance-hotels',
                   name: '飯店帳務',
                   type: 'link'
                 }
@@ -138,12 +138,12 @@ export default {
               type: 'block',
               children: [
                 {
-                  key: 'homepage-edit',
+                  key: 'user-list',
                   name: '會員列表',
                   type: 'page'
                 },
                 {
-                  key: 'policy-edit',
+                  key: 'user-subscription',
                   name: '訂閱',
                   type: 'page'
                 }
@@ -154,12 +154,12 @@ export default {
               type: 'block',
               children: [
                 {
-                  key: 'homepage-edit',
+                  key: 'comments-list',
                   name: '評論列表',
                   type: 'page'
                 },
                 {
-                  key: 'policy-edit',
+                  key: 'comments-nights',
                   name: '入住夜間',
                   type: 'page'
                 }
@@ -176,7 +176,7 @@ export default {
               type: 'block',
               children: [
                 {
-                  key: 'homepage-edit',
+                  key: 'system-auth',
                   name: '權限',
                   type: 'page'
                 }
@@ -190,7 +190,7 @@ export default {
 }
 </script>
 
-<style lang="sass">
+<style lang="sass" scoped>
 .mask__navigation
   @apply list-none p-16 font-sans
   color: #909090

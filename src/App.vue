@@ -3,8 +3,8 @@
   <div class="sticky--body">
     <div class="mask">
       <div class="mask__sidebar">
-        <maskSidebarLogo></maskSidebarLogo>
-        <maskSidebarNavigation></maskSidebarNavigation>
+        <sidebarLogo></sidebarLogo>
+        <sidebarNavigation></sidebarNavigation>
       </div>
       <div class="mask__main">
         <div class="mask__main__header">
@@ -28,13 +28,13 @@
 </template>
 
 <script>
-import maskSidebarNavigation from '@/layout/sidebar/mask-sidebar-navigation'
-import maskSidebarLogo from '@/layout/sidebar/mask-sidebar-logo'
+import sidebarLogo from '@/layout/sidebar/logo'
+import sidebarNavigation from '@/layout/sidebar/navigation'
 
 export default {
   components: {
-    maskSidebarNavigation,
-    maskSidebarLogo
+    sidebarLogo,
+    sidebarNavigation
   },
   data () {
     return {

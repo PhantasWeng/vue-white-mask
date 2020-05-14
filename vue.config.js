@@ -41,7 +41,7 @@ module.exports = {
             'success-color': '#A9D341',
             'warning-color': '#F7AC15',
             'error-color': '#EA5E2E',
-            'font-size-base': '14',
+            'font-size-base': '14px',
             'heading-color': '#5C656B',
             'text-color': '#5C656B',
             'text-color-secondary': '#889096',
