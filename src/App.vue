@@ -58,6 +58,17 @@
         </nav>
       </div>
       <div class="layout__main">
+        <div class="layout__main__header">
+          <div class="layout__main__header__application">
+            <img src="~@/assets/logo.png" alt="OwlNews Logo" class="layout__main__header__application__logo">
+            <h2 class="layout__main__header__application__title">奧丁丁 OwlTing</h2>
+          </div>
+          <div class="layout__main__header__control">
+            <div class="layout__main__header__user">
+              <img src="https://lh3.google.com/u/0/ogw/ADGmqu_U_avM1xZlSsLYty6vHruZQFOYUzOQdQ_ojOxJ=s83-c-mo">
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -101,14 +112,13 @@ export default {
         width: 36px
         @apply mr-8
       &__name
-        @apply text-xl font-bold mr-8
+        @apply text-2xl font-bold mr-8
 
     &__navigation
       @apply list-none p-16 font-sans
       color: #909090
       &__hr
-        @apply border-t
-        border-color: #D8D8D8
+        @apply border-t border-grey-lighter
       &__group
         @apply mb-8
         &--title
@@ -122,8 +132,23 @@ export default {
         .activated
           @apply text-blue
 
-  &__mainContent
-
+  &__main
+    @apply text-green
+    &__header
+      @apply flex items-center p-8 justify-between
+      @apply border-b border-grey-lightest
+      min-height: 63px
+      &__application
+        @apply inline-flex flex-wrap items-center
+        &__logo
+          @apply inline-block m-8
+          width: 36px
+        &__title
+          @apply text-grey-darkest font-bold
+      &__control
+      &__user
+        width: 40px
+        @apply overflow-hidden rounded-full
 .serviceName
   @apply text-grey-darker font-bold text-xl
 </style>
