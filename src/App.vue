@@ -3,11 +3,8 @@
   <div class="sticky--body">
     <div class="mask">
       <div class="mask__sidebar">
-        <div class="mask__sidebar__logo">
-          <img src="~@/assets/logo.png" alt="OwlNews Logo" class="mask__sidebar__logo__image">
-          <div class="mask__sidebar__logo__name">WhiteMask</div>
-        </div>
-        <mask-navigation></mask-navigation>
+        <maskSidebarLogo></maskSidebarLogo>
+        <maskSidebarNavigation></maskSidebarNavigation>
       </div>
       <div class="mask__main">
         <div class="mask__main__header">
@@ -31,10 +28,13 @@
 </template>
 
 <script>
-import maskNavigation from '@/layout/mask-navigation'
+import maskSidebarNavigation from '@/layout/sidebar/mask-sidebar-navigation'
+import maskSidebarLogo from '@/layout/sidebar/mask-sidebar-logo'
+
 export default {
   components: {
-    'mask-navigation': maskNavigation
+    maskSidebarNavigation,
+    maskSidebarLogo
   },
   data () {
     return {
@@ -63,15 +63,6 @@ export default {
     @apply border-r border-grey-lightest
     min-height: 100vh
     min-width: 200px
-    &__logo
-      @apply flex items-center justify-center
-      @apply border-b border-grey-lightest
-      @apply p-16
-      &__image
-        width: 36px
-        @apply mr-8
-      &__name
-        @apply text-2xl font-bold mr-8
   &__main
     @apply flex-auto text-green
     &__header

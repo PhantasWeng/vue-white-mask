@@ -1,26 +1,25 @@
 <template>
-  <nav class="mask__navigation">
-    <template v-for="(group, index) in data">
-      <div :key="group.name">
-        <template v-for="block in group.children">
-          <div class="mask__navigation__block" :key="`${group.name}-${block.name}`">
-            <li class="mask__navigation__block--title">{{ block.name }}</li>
-            <template v-for="children in block.children">
-              <li :key="`${group.name}-${block.name}-${children.key}`">
-                <span>{{ children.name }}</span>
-              </li>
-            </template>
-          </div>
-        </template>
-        <hr v-if="index + 1 < data.length" class="mask__navigation__hr">
-      </div>
-    </template>
-  </nav>
+<nav class="mask__navigation">
+  <template v-for="(group, index) in data">
+    <div :key="group.name">
+      <template v-for="block in group.children">
+        <div class="mask__navigation__block" :key="`${group.name}-${block.name}`">
+          <li class="mask__navigation__block--title">{{ block.name }}</li>
+          <template v-for="children in block.children">
+            <li :key="`${group.name}-${block.name}-${children.key}`">
+              <span>{{ children.name }}</span>
+            </li>
+          </template>
+        </div>
+      </template>
+      <hr v-if="index + 1 < data.length" class="mask__navigation__hr">
+    </div>
+  </template>
+</nav>
 </template>
 
 <script>
 export default {
-  name: 'mask-navigation',
   data () {
     return {
       data: [
