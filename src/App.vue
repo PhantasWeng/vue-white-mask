@@ -69,6 +69,9 @@
             </div>
           </div>
         </div>
+        <div class="layout__main__view">
+          <router-view></router-view>
+        </div>
       </div>
     </div>
   </div>
@@ -98,12 +101,12 @@ export default {
     @apply flex-auto
 
 .layout
+  @apply flex
   &__sidebar
-    @apply float-left
+    @apply flex-initial
     @apply border-r border-grey-lightest
     min-height: 100vh
     min-width: 200px
-
     &__logo
       @apply flex items-center justify-center
       @apply border-b border-grey-lightest
@@ -113,7 +116,6 @@ export default {
         @apply mr-8
       &__name
         @apply text-2xl font-bold mr-8
-
     &__navigation
       @apply list-none p-16 font-sans
       color: #909090
@@ -133,11 +135,11 @@ export default {
           @apply text-blue
 
   &__main
-    @apply text-green
+    @apply flex-auto text-green
     &__header
       @apply flex items-center p-8 justify-between
       @apply border-b border-grey-lightest
-      min-height: 63px
+      min-height: 68px
       &__application
         @apply inline-flex flex-wrap items-center
         &__logo
@@ -149,6 +151,6 @@ export default {
       &__user
         width: 40px
         @apply overflow-hidden rounded-full
-.serviceName
-  @apply text-grey-darker font-bold text-xl
+    &__view
+      @apply p-16
 </style>
