@@ -12,6 +12,11 @@
 </div>
 </template>
 
+<script>
+export default {
+}
+</script>
+
 <style lang="sass" scoped>
 .mask__main__header
   @apply flex items-center p-8 justify-between
