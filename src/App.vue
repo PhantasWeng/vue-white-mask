@@ -1,13 +1,11 @@
 <template>
 <div>
-  <div @click="test">test</div>
   <router-view></router-view>
   <vue-progress-bar></vue-progress-bar>
 </div>
 </template>
 
 <script>
-import axios from 'axios'
 export default {
   name: 'app',
   data () {
@@ -15,18 +13,6 @@ export default {
     }
   },
   methods: {
-    test () {
-      this.$Progress.start()
-      axios({
-        url: 'https://blog.owlting.com/wp-json/wp/v2/posts?page=1&per_page=6&_embed',
-        method: 'get',
-        crossDomain: true
-      }).then((response) => {
-        this.$Progress.finish()
-      }, (response) => {
-        this.$Progress.fail()
-      })
-    }
   },
   created () {
     //  [App.vue specific] When App.vue is first loaded start the progress bar
