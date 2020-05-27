@@ -2,15 +2,19 @@
 <div class="sticky--layout">
   <div class="sticky--body">
     <div class="mask">
-      <div class="mask__sidebar">
-        <sidebarLogo></sidebarLogo>
-        <sidebarNavigation></sidebarNavigation>
-      </div>
-      <div class="mask__main">
-        <mainHeader></mainHeader>
-        <div class="mask__main__view">
-          <router-view></router-view>
+        <div class="mask__sidebar">
+          <sidebarLogo ref="sideBarLogo"></sidebarLogo>
+          <perfect-scrollbar>
+            <sidebarNavigation ref="sideBarNavigation"></sidebarNavigation>
+          </perfect-scrollbar>
         </div>
+      <div class="mask__main">
+        <mainHeader ref="mainHeader"></mainHeader>
+        <perfect-scrollbar>
+          <div class="mask__main__view" ref="mainView">
+            <router-view></router-view>
+          </div>
+        </perfect-scrollbar>
       </div>
     </div>
   </div>
@@ -21,6 +25,7 @@
 import sidebarLogo from '@/layout/sidebar/logo'
 import sidebarNavigation from '@/layout/sidebar/navigation'
 import mainHeader from '@/layout/main/header'
+// import _ from 'lodash'
 
 export default {
   components: {
@@ -30,13 +35,44 @@ export default {
   },
   data () {
     return {
-      collapsed: false
+      collapsed: false,
+      sidebar: {
+        logo: {
+          height: null
+        }
+      },
+      main: {
+        header: {
+          height: null
+        }
+      }
+      // resize: null
     }
+  },
+  created () {
+    // this.resize = _.debounce(() => {
+    //   console.log('resize', this.$refs.sideBarLogo.$el.clientHeight)
+    // }, 300)
+    this.$nextTick(function () {
+      this.sidebar.logo.height = this.$refs.sideBarLogo.$el.clientHeight
+      this.main.header.height = this.$refs.mainHeader.$el.clientHeight
+      this.$refs.sideBarNavigation.$el.style.height = `calc(100vh - ${this.sidebar.logo.height}px)`
+      this.$refs.mainView.style.height = `calc(100vh - ${this.sidebar.logo.height}px)`
+    })
+  },
+  mounted () {
+    // console.log(this.$refs.sideBarLogo.$el.clientHeight)
+    // window.addEventListener('resize', this.resize)
+  },
+  destroyed () {
+    window.removeEventListener('resize', this.resize)
   }
 }
 </script>
 
 <style lang="sass">
+body
+  @apply overflow-hidden
 #app
   font-family: Avenir, Helvetica, Arial, sans-serif
   -webkit-font-smoothing: antialiased

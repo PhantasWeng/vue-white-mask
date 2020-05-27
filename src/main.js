@@ -14,6 +14,9 @@ import 'owlsight/dist/main.css'
 import 'owlsight/icons/css/owl.css'
 import 'owlsight/icons/css/animation.css'
 
+import PerfectScrollbar from 'vue2-perfect-scrollbar'
+import 'vue2-perfect-scrollbar/dist/vue2-perfect-scrollbar.css'
+
 Vue.config.productionTip = false
 Object.keys(Antd).forEach(key => {
   Vue.use(Antd[key])
@@ -24,6 +27,8 @@ Object.keys(Antd).forEach(key => {
 // Vue.use(Menu)
 // Vue.use(Icon)
 // Vue.use(Button)
+
+Vue.use(PerfectScrollbar)
 
 new Vue({
   router,
