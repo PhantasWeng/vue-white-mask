@@ -15,6 +15,8 @@
       <hr v-if="index + 1 < data.length" class="mask__navigation__hr">
     </div>
   </template>
+  <router-link :to="{name: 'Login'}">login</router-link>
+  <router-link :to="{name: 'Dashboard'}">dashboard</router-link>
 </nav>
 </template>
 

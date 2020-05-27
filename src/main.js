@@ -3,12 +3,16 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
+import VueProgressBar from 'vue-progressbar'
+
 // import Antd from 'ant-design-vue'
 // import { Base, Layout, Button, Menu, Icon } from 'ant-design-vue'
 import Antd from './antComponents'
 
 // import 'ant-design-vue/dist/antd.css'
 // import 'ant-design-vue/dist/antd.less'
+
+import owlsight from 'owlsight'
 
 import 'owlsight/dist/main.css'
 import 'owlsight/icons/css/owl.css'
@@ -29,6 +33,18 @@ Object.keys(Antd).forEach(key => {
 // Vue.use(Button)
 
 Vue.use(PerfectScrollbar)
+
+Vue.use(VueProgressBar, {
+  color: owlsight.theme.extend.colors.green.default,
+  failedColor: owlsight.theme.extend.colors.red.default,
+  thickness: '5px',
+  autoRevert: true,
+  location: 'top'
+})
+
+// router.beforeEach((to, from, next) => {
+//   console.log(to, from, next)
+// })
 
 new Vue({
   router,

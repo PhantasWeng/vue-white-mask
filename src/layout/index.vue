@@ -46,16 +46,13 @@ export default {
   },
   methods: {
     getHeaderHeight: async function () {
-      console.debug('getHeaderHeight')
       this.height.sidebarHeader = this.$refs.sideBarHeader.$el.clientHeight
       this.height.mainHeader = this.$refs.mainHeader.$el.clientHeight
       this.syncHeaderHeight()
     },
     syncHeaderHeight: function () {
-      console.debug('syncHeaderHeight')
       const max = _.max([this.height.sidebarHeader, this.height.mainHeader])
       this.height.sidebarHeader = this.height.mainHeader = max
-      console.log(this.height.sidebarHeader, this.height.mainHeader, max)
     }
   },
   created () {
