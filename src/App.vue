@@ -2,16 +2,16 @@
 <div class="sticky--layout">
   <div class="sticky--body">
     <div class="mask">
-        <div class="mask__sidebar">
-          <sidebarLogo ref="sideBarLogo"></sidebarLogo>
-          <perfect-scrollbar>
-            <sidebarNavigation ref="sideBarNavigation"></sidebarNavigation>
-          </perfect-scrollbar>
-        </div>
+      <div class="mask__sidebar">
+        <sidebarLogo ref="sideBarHeader" :style="{height: `${height.sidebarHeader}px`}"></sidebarLogo>
+        <perfect-scrollbar ref="sideBarNavigationHeight" :style="{height: `calc(100vh - ${this.height.sidebarHeader}px)`}">
+          <sidebarNavigation></sidebarNavigation>
+        </perfect-scrollbar>
+      </div>
       <div class="mask__main">
-        <mainHeader ref="mainHeader"></mainHeader>
-        <perfect-scrollbar>
-          <div class="mask__main__view" ref="mainView">
+        <mainHeader ref="mainHeader" :style="{height: `${height.mainHeader}px`}"></mainHeader>
+        <perfect-scrollbar ref="mainViewHeight" :style="{height: `calc(100vh - ${this.height.mainHeader}px)`}">
+          <div class="mask__main__view">
             <router-view></router-view>
           </div>
         </perfect-scrollbar>
@@ -25,9 +25,10 @@
 import sidebarLogo from '@/layout/sidebar/logo'
 import sidebarNavigation from '@/layout/sidebar/navigation'
 import mainHeader from '@/layout/main/header'
-// import _ from 'lodash'
+import _ from 'lodash'
 
 export default {
+  name: 'app',
   components: {
     sidebarLogo,
     sidebarNavigation,
@@ -36,36 +37,42 @@ export default {
   data () {
     return {
       collapsed: false,
-      sidebar: {
-        logo: {
-          height: null
-        }
-      },
-      main: {
-        header: {
-          height: null
-        }
+      headerHeight: null,
+      height: {
+        sidebarHeader: null,
+        mainHeader: null
       }
-      // resize: null
+    }
+  },
+  methods: {
+    getHeaderHeight: async function () {
+      console.debug('getHeaderHeight')
+      this.height.sidebarHeader = this.$refs.sideBarHeader.$el.clientHeight
+      this.height.mainHeader = this.$refs.mainHeader.$el.clientHeight
+      this.syncHeaderHeight()
+    },
+    syncHeaderHeight: function () {
+      console.debug('syncHeaderHeight')
+      const max = _.max([this.height.sidebarHeader, this.height.mainHeader])
+      this.height.sidebarHeader = this.height.mainHeader = max
+      console.log(this.height.sidebarHeader, this.height.mainHeader, max)
     }
   },
   created () {
     // this.resize = _.debounce(() => {
-    //   console.log('resize', this.$refs.sideBarLogo.$el.clientHeight)
+    //   this.getHeaderHeight()
     // }, 300)
     this.$nextTick(function () {
-      this.sidebar.logo.height = this.$refs.sideBarLogo.$el.clientHeight
-      this.main.header.height = this.$refs.mainHeader.$el.clientHeight
-      this.$refs.sideBarNavigation.$el.style.height = `calc(100vh - ${this.sidebar.logo.height}px)`
-      this.$refs.mainView.style.height = `calc(100vh - ${this.sidebar.logo.height}px)`
+      this.getHeaderHeight()
     })
   },
   mounted () {
-    // console.log(this.$refs.sideBarLogo.$el.clientHeight)
     // window.addEventListener('resize', this.resize)
   },
   destroyed () {
-    window.removeEventListener('resize', this.resize)
+    // window.removeEventListener('resize', this.resize)
+  },
+  watch: {
   }
 }
 </script>

@@ -21,7 +21,7 @@ export default {
 .mask__main__header
   @apply flex items-center p-8 justify-between
   @apply border-b border-grey-lightest
-  min-height: 68px
+  // height: 168px
   &__application
     @apply inline-flex flex-wrap items-center
     &__logo
