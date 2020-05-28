@@ -6,7 +6,7 @@
       <a-tag color="orange" class="ml-8">v0.1</a-tag>
     </div>
     <a-row type="flex">
-      <a-col :xs="24" :lg="8">
+      <a-col :xs="24" :lg="8" :xl="6">
         <a-card>
           <img slot="cover" alt="example" src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
           />
@@ -23,7 +23,7 @@
           </a-card-meta>
         </a-card>
       </a-col>
-      <a-col :xs="24" :lg="16">
+      <a-col :xs="24" :lg="16" :xl="18">
         <a-card class="lg:mx-8 mt-8 lg:mt-0 mb-8">
           <template>
             <div>
