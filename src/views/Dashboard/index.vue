@@ -2,7 +2,7 @@
   <div class="home">
     <a-alert message="whiteMask is currently under development." type="info" close-text="Close" />
     <div class="flex items-center">
-      <h1>Dashboard</h1>
+      <h1 class="uppercase">Dashboard</h1>
       <a-tag color="orange" class="ml-8">v0.1</a-tag>
     </div>
     <div class="md:flex">
