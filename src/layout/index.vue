@@ -2,14 +2,14 @@
 <div class="sticky--layout">
   <div class="sticky--body">
     <div class="mask">
-      <div class="mask__sidebar">
+      <div v-show="displayLayout" class="mask__sidebar">
         <sidebarLogo ref="sideBarHeader" :style="{height: `${height.sidebarHeader}px`}"></sidebarLogo>
         <perfect-scrollbar ref="sideBarNavigationHeight" :style="{height: `calc(100vh - ${this.height.sidebarHeader}px)`}">
           <sidebarNavigation></sidebarNavigation>
         </perfect-scrollbar>
       </div>
       <div class="mask__main">
-        <mainHeader ref="mainHeader" :style="{height: `${height.mainHeader}px`}"></mainHeader>
+        <mainHeader v-show="displayLayout" ref="mainHeader" :style="{height: `${height.mainHeader}px`}"></mainHeader>
         <perfect-scrollbar ref="mainViewHeight" :style="{height: `calc(100vh - ${this.height.mainHeader}px)`}">
           <div class="mask__main__view">
             <router-view></router-view>
@@ -41,7 +41,8 @@ export default {
       height: {
         sidebarHeader: null,
         mainHeader: null
-      }
+      },
+      displayLayout: true
     }
   },
   methods: {
