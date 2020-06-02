@@ -1,6 +1,5 @@
 <template>
 <div>
-  <h1>Policy-edit</h1>
 </div>
 </template>
 

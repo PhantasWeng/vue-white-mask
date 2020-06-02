@@ -12,6 +12,7 @@
         <mainHeader v-show="displayLayout" ref="mainHeader" :style="{height: `${height.mainHeader}px`}"></mainHeader>
         <perfect-scrollbar ref="mainViewHeight" :style="{height: `calc(100vh - ${this.height.mainHeader}px)`}">
           <div class="mask__main__view">
+            <div v-if="$route.meta.name" class="text-xs text-grey-dark">{{ $route.meta.name }}</div>
             <router-view></router-view>
           </div>
         </perfect-scrollbar>
@@ -97,7 +98,7 @@ body
     min-height: 100vh
     min-width: 200px
   &__main
-    @apply flex-auto text-green
+    @apply flex-auto
     &__view
       @apply p-16
 </style>

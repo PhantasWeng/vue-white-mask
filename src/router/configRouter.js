@@ -14,6 +14,7 @@ const configRouter = () => {
           component: () => import(`@/views/${_.capitalize(first.key)}`),
           children: [],
           meta: {
+            name: first.name,
             hidden: first.hidden
           }
         })
@@ -26,6 +27,7 @@ const configRouter = () => {
             component: () => import('@/layout/container'),
             children: [],
             meta: {
+              name: first.name,
               hidden: first.hidden
             }
           })
@@ -42,6 +44,7 @@ const configRouter = () => {
                 name: _.capitalize(second.key),
                 component: () => import(`@/views/${_.capitalize(second.key)}`),
                 meta: {
+                  name: second.name,
                   hidden: second.hidden
                 }
               })
