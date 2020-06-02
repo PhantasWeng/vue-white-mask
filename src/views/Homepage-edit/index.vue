@@ -1,6 +1,6 @@
 <template>
 <div>
-  <h1>hotels</h1>
+  <h1>Homepage-edit</h1>
 </div>
 </template>
 

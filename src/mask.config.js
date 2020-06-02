@@ -2,161 +2,130 @@ const mask = {
   title: 'whiteMask',
   router: [
     {
-      name: 'website',
-      type: 'group',
-      children: [
+      items: [
         {
-          name: '儀表版',
           key: 'dashboard',
-          type: 'page'
+          name: '儀表版'
         },
         {
+          key: 'frontend',
           name: '前台',
-          type: 'block',
+          hidden: true,
           children: [
             {
               key: 'homepage-edit',
-              name: '首頁編輯',
-              type: 'page'
+              name: '首頁編輯'
             },
             {
               key: 'policy-edit',
-              name: '政策/條款',
-              type: 'page'
+              name: '政策/條款'
+              // hidden: true
             },
             {
               key: 'phantas',
-              name: 'Phantas',
-              type: 'link'
+              name: 'Phantas'
             }
           ]
         }
       ]
     },
     {
-      name: 'hotels',
-      type: 'group',
-      children: [
+      items: [
         {
           name: '旅宿',
-          type: 'block',
           children: [
             {
               key: 'hotel-list',
-              name: '旅宿列表',
-              type: 'page'
+              name: '旅宿列表'
             },
             {
               key: 'hotel-apply',
-              name: '申請列表',
-              type: 'page'
+              name: '申請列表'
             },
             {
               key: 'hotel-outer',
-              name: '外部房源',
-              type: 'link'
+              name: '外部房源'
             }
           ]
         },
         {
           name: '標籤',
-          type: 'block',
           children: [
             {
               key: 'projects-list',
-              name: '行銷活動',
-              type: 'page'
+              name: '行銷活動'
             },
             {
               key: 'invitations-list',
-              name: '邀請回饋',
-              type: 'page'
+              name: '邀請回饋'
             },
             {
               key: 'coupons',
-              name: '優惠券',
-              type: 'link'
+              name: '優惠券'
             },
             {
               key: 'events-list',
-              name: '活動列表',
-              type: 'link'
+              name: '活動列表'
             }
           ]
         },
         {
           name: '財務',
-          type: 'block',
           children: [
             {
               key: 'finance-refund',
-              name: '銷退',
-              type: 'page'
+              name: '銷退'
             },
             {
               key: 'finance-accounts',
-              name: '帳務',
-              type: 'page'
+              name: '帳務'
             },
             {
               key: 'finance-hotels',
-              name: '飯店帳務',
-              type: 'link'
+              name: '飯店帳務'
             }
           ]
         }
       ]
     },
     {
-      name: 'user',
-      type: 'group',
-      children: [
+      items: [
         {
           name: '會員',
-          type: 'block',
           children: [
             {
               key: 'user-list',
-              name: '會員列表',
-              type: 'page'
+              name: '會員列表'
             },
             {
               key: 'user-subscription',
-              name: '訂閱',
-              type: 'page'
+              name: '訂閱'
             }
           ]
         },
         {
           name: '評論',
-          type: 'block',
           children: [
             {
               key: 'comments-list',
-              name: '評論列表',
-              type: 'page'
+              name: '評論列表'
             },
             {
               key: 'comments-nights',
-              name: '入住夜間',
-              type: 'page'
+              name: '入住夜間'
             }
           ]
         }
       ]
     },
     {
-      name: 'system',
-      type: 'group',
-      children: [
+      items: [
         {
           name: '系統',
-          type: 'block',
           children: [
             {
               key: 'system-auth',
-              name: '權限',
-              type: 'page'
+              name: '權限'
             }
           ]
         }
