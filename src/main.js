@@ -3,6 +3,9 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
+import dayjs from 'dayjs'
+import 'dayjs/locale/zh-tw'
+
 import VueProgressBar from 'vue-progressbar'
 
 // import Antd from 'ant-design-vue'
@@ -22,6 +25,11 @@ import PerfectScrollbar from 'vue2-perfect-scrollbar'
 import 'vue2-perfect-scrollbar/dist/vue2-perfect-scrollbar.css'
 
 Vue.config.productionTip = false
+
+dayjs.locale('zh-tw')
+
+Vue.prototype.$dayjs = dayjs
+
 Object.keys(Antd).forEach(key => {
   Vue.use(Antd[key])
 })
