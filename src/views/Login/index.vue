@@ -1,6 +1,6 @@
 <template>
 <div class="flex" style="min-height: 100vh;">
-  <div class="flex items-center justify-center flex-col flex-1 bg-blue-darker">
+  <div class="flex items-center justify-center flex-col flex-1 bg-blue-darkest">
     <h1 class="text-white text-5xl font-bold mr-8">whiteMask</h1>
     <a-card hoverable style="width: 360px">
       <a-form-model :model="formInline" @submit="handleSubmit" @submit.native.prevent>
@@ -35,14 +35,15 @@ export default {
   data () {
     return {
       formInline: {
-        user: '',
-        password: ''
+        user: 'whiteMask-demo',
+        password: 'test123'
       }
     }
   },
   methods: {
     handleSubmit (e) {
       console.log(this.formInline)
+      this.$router.push({ name: 'Dashboard' })
     }
   }
 }
