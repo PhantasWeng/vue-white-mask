@@ -19,7 +19,9 @@ const configRouter = () => {
           }
         })
       } catch (err) {
-        // console.warn(first.key, err)
+        if (!first.hidden) {
+          console.error(`Require file ${_.capitalize(first.key)} failed.`, err)
+        }
         if (first.key) {
           result.push({
             path: first.key,
@@ -38,6 +40,7 @@ const configRouter = () => {
         if (target) {
           _.flatMap(first.children, second => {
             try {
+              console.log(second.key, require(`@/views/${_.capitalize(second.key)}`))
               require(`@/views/${_.capitalize(second.key)}`)
               result[target].children.push({
                 path: second.key,
@@ -49,13 +52,13 @@ const configRouter = () => {
                 }
               })
             } catch (err) {
+              console.error(`Require file ${_.capitalize(second.key)} failed.`, err)
             }
           })
         }
       }
     })
   })
-  console.log('result', result)
   return result
 }
 

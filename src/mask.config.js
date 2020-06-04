@@ -8,22 +8,18 @@ const mask = {
           name: '儀表版'
         },
         {
-          key: 'frontend',
-          name: '前台',
+          key: 'start',
+          name: '開始',
           hidden: true,
           children: [
             {
-              key: 'homepage-edit',
-              name: '首頁編輯'
+              key: 'installation',
+              name: '安裝'
             },
             {
-              key: 'policy-edit',
-              name: '政策/條款'
+              key: 'mask-config',
+              name: '設定檔'
               // hidden: true
-            },
-            {
-              key: 'phantas',
-              name: 'Phantas'
             }
           ]
         }
@@ -32,57 +28,28 @@ const mask = {
     {
       items: [
         {
-          name: '旅宿',
+          name: '表單',
           children: [
             {
-              key: 'hotel-list',
-              name: '旅宿列表'
+              key: 'single-form',
+              name: '簡單表單'
             },
             {
-              key: 'hotel-apply',
-              name: '申請列表'
-            },
-            {
-              key: 'hotel-outer',
-              name: '外部房源'
+              key: 'group-form',
+              name: '群組表單'
             }
           ]
         },
         {
-          name: '標籤',
+          name: '列表/表格',
           children: [
             {
-              key: 'projects-list',
-              name: '行銷活動'
+              key: 'table',
+              name: '表格'
             },
             {
-              key: 'invitations-list',
-              name: '邀請回饋'
-            },
-            {
-              key: 'coupons',
-              name: '優惠券'
-            },
-            {
-              key: 'events-list',
-              name: '活動列表'
-            }
-          ]
-        },
-        {
-          name: '財務',
-          children: [
-            {
-              key: 'finance-refund',
-              name: '銷退'
-            },
-            {
-              key: 'finance-accounts',
-              name: '帳務'
-            },
-            {
-              key: 'finance-hotels',
-              name: '飯店帳務'
+              key: 'list',
+              name: '列表'
             }
           ]
         }
@@ -91,28 +58,24 @@ const mask = {
     {
       items: [
         {
-          name: '會員',
+          name: '模組',
           children: [
             {
-              key: 'user-list',
-              name: '會員列表'
+              key: 'auth',
+              name: '會員驗證 SSO'
             },
             {
-              key: 'user-subscription',
-              name: '訂閱'
+              key: 'cookie-agreement',
+              name: '同意 Cookie 使用'
             }
           ]
         },
         {
-          name: '評論',
+          name: '相關 Plugins',
           children: [
             {
-              key: 'comments-list',
-              name: '評論列表'
-            },
-            {
-              key: 'comments-nights',
-              name: '入住夜間'
+              key: 'plugins-list',
+              name: 'Plugin 列表'
             }
           ]
         }
@@ -124,8 +87,8 @@ const mask = {
           name: '系統',
           children: [
             {
-              key: 'system-auth',
-              name: '權限'
+              key: 'log',
+              name: 'Log 列表'
             }
           ]
         }
